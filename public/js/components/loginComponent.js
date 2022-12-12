@@ -1,13 +1,16 @@
+import { userAuthentication } from "../utilities/authentication.js"
+import { postRequest } from "../utilities/apiCalls.js"
+
 const loginForm = document.getElementById('loginForm')
 const userCredentials = {username:'', password:''}
-
-const loginUser = (userData) =>{
-    const url = 'https://freddy.codesubmit.io/login'
-    fetch(url,{
-        method:'POST',
-        body: JSON.stringify(userData),
-        headers:{"Content-type":"application/json"}
-    }).then((response)=>response.json()).then((data)=>{
+const usertoken = localStorage.getItem('token')
+const userValidation = new userAuthentication()
+const url = 'https://freddy.codesubmit.io/login'
+const loginUser = (url,userData) =>{
+    
+    postRequest(url,userData).then(
+        (response)=>response.json()).then(
+            (data)=>{
         if(data.msg){
             alert(data.msg)
         }else{
@@ -26,6 +29,8 @@ loginForm.onsubmit = (event) => {
         //execute the api request
         userCredentials.username = loginForm.username.value
         userCredentials.password = loginForm.password.value
-        loginUser(userCredentials) 
+        loginUser(url,userCredentials) 
     }
 }
+
+((token)=>{userValidation.validateToken(token)})(usertoken)
