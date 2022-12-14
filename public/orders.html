@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/pages.css">
+    <link rel="stylesheet" href="./styles/orders.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <aside>
+            <img src="./assets/Freddys_Logo.svg" alt="" srcset="">
+            <ul>
+                <li><a href="./dashboard.html">Dashboard</a> </li>
+                <li><a href="./orders.html">Orders</a></li>
+                <li ><a id ="logout" href="#" onclick="logout()">Logout</a> </li>
+        
+            </ul>
+        </aside>
+        <main>
+            <div class="wrapper_inner">
+                
+                <div id="" class="order_section">
+                    <div class="orderTitle">
+                        <h2 id="ordersText">Orders</h2>
+                        <input type="text" name="" id="search" placeholder = "Search Item">
+                    </div>
+                    
+                    <div id="order_table__container"class="order_table__container">
+
+                    </div>
+                    <div id="buttonContainer">
+                        <button id="previousButton">&LeftArrow;</button>
+                        <p id="paginatorText">Page</p>
+                        <button id="nextButton">&RightArrow;</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+<script type = "module" src="./js/pages/oders.js"></script>
+<script type="module" src="./js/utilities/authentication.js"></script>
+</html>
