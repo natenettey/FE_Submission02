@@ -4,18 +4,39 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/pages.css">
+    <link rel="stylesheet" href="./styles/index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
     <title>Document</title>
 </head>
 <body>
      <main>
         <div class="container" method="POST">
-            <form id="loginForm">
-                <input type="text" name="username" id="username">
-                <input type="password" name="password" id="password">
-                <button type="submit">Login</button>
-            </form>
+            <div class="login_container">
+                <div class="container">
+                    <div class="logoAndTitle">
+                        <div class="formTitle">
+                            <p>Freddy's <br>Artisanal <br>Halloween <br> Candy Shop</p>
+                        </div>
+                        <div class="formLogo">
+                            <img src="./assets/Freddys_Logo.svg" alt="" srcset="">
+                        </div>
+                    </div>
+                    
+                    <form id="loginForm">
+                        <input type="text" name="username" id="username">
+                        <input type="password" name="password" id="password">
+                        <button type="submit" class="login_button">Login</button>
+                    </form>
+                </div>
+               
+            </div>
+            
         </div>
      </main>
 </body>
-<script type="module" src="./js/components/loginComponent.js"></script>
+<script type="module" src="./js/pages/login.js"></script>
 </html>
