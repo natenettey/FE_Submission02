@@ -1,0 +1,8 @@
+.orderTitle{
+    display: flex;
+    justify-content: space-between;
+    margin: 25px 0 25px 0;
+}
+.order_table__container{
+overflow-y: auto;
+}
