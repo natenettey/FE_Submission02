@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./styles/dashboard.css">
+    <link rel="stylesheet" href="./styles/pages.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400&display=swap" rel="stylesheet">
@@ -14,11 +14,12 @@
 <body>
     <div class="wrapper">
         <aside>
+            <img src="./assets/Freddys_Logo.svg" alt="" srcset="">
             <ul>
-                <li>Item</li>
-                <li>Item</li>
-                <li>Item</li>
-                <li>Item</li>
+                <li><a href="./dashboard.html">Dashboard</a> </li>
+                <li><a href="./orders.html">Orders</a></li>
+                <li><a id="logout" href="#" onclick="logout()">Logout</a> </li>
+                
             </ul>
         </aside>
         <main>
@@ -42,7 +43,7 @@
                                 <p>Last Week</p>
                             </div>
                             <div class="controls_stats_details">
-                                <p>$1456 / 9 orders</p>
+                                <p>$34K / 120 orders</p>
                             </div>
                         </div>
                         <div class="controls_stats__lastmonth">
@@ -50,7 +51,7 @@
                                 <p>Last Month</p>
                             </div>
                             <div class="controls_stats_details">
-                                <p>$1456 / 9 orders</p>
+                                <p>$95K / 876 orders</p>
                             </div>
                         </div>
                     </div>
@@ -58,17 +59,34 @@
                 <div class="revenue_section">
                     <div class="revenue_section__title">
                         <h2 id="revenueText">Revenue <span>(last 7 days)</span></h2>
-                        <input type="checkbox" id="toggle">
-                        <label for="toggle">Toggle</label>
+                        <div class="revenue_section__toggle">
+                            <label class="switch">
+                                <input id="switch" type="checkbox">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                        
                     </div>
                     <div class="revenue_section__chart">
-                        <canvas id="weekChart" style="width:100%;max-width:600px"></canvas>
-                        <canvas id="monthChart" style="width:100%;max-width:600px"></canvas>
+                        <div id="week_chart" class="week_chart ">
+                            <canvas id="weekChart" style="width:100%;max-width:600px; " ></canvas>
+                        </div>
+                        <div id="month_chart" class="month_chart display">
+                            <canvas id="monthChart" style="width:100%;max-width:600px"></canvas>
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <div id="bestseller_table" class="bestseller_section">
+                    <h2 id="bestSellersText">Best Sellers</h2>
+                    <div id="best_seller_table__container"class="best_seller_table__container">
+
                     </div>
                 </div>
             </div>
         </main>
     </div>
 </body>
-<script type = "module" src="./js/components/dashboardComponent.js"></script>
+<script type = "module" src="./js/pages/dashboard.js"></script>
 </html>
